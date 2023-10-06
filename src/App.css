@@ -34,3 +34,8 @@
 .jeu button:hover {
   opacity: 0.75;
 }
+
+.facede {
+  width: 70px;
+  height: 70;
+}

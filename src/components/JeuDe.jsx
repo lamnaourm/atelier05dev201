@@ -26,9 +26,9 @@ export default class JeuDe extends Component {
                 <h2>face:{this.state.face} </h2>
                 {
                     this.state.face ===null?
-                    <img src={require("../images/facevide.jpeg")} alt="" />
+                    <img className='facede' src={require("../images/facevide.jpeg")} alt="" />
                     :
-                    <img src={require("../images/face"+this.state.face+".jpeg")} alt="" />
+                    <img className='facede' src={require("../images/face"+this.state.face+".jpeg")} alt="" />
                 }
 
                 <h2>nombre d'essais : {this.state.compteur}</h2>
