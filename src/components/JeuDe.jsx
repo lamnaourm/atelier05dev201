@@ -18,7 +18,7 @@ export default class JeuDe extends Component {
     render() {
         return (
             <div className='jeu'> 
-                <img src="images/Dé.PNG" />
+                <img src={require('../images/de.jpeg')} alt='logo de dé'/>
                 <h1>Jeu de Dé...</h1>
                 <h2>face:….. </h2>
                 <h2>nombre d'essais…..</h2>
