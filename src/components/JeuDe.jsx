@@ -24,6 +24,13 @@ export default class JeuDe extends Component {
                 <img src={require('../images/de.jpeg')} alt='logo de dé' />
                 <h1>Jeu de Dé</h1>
                 <h2>face:{this.state.face} </h2>
+                {
+                    this.state.face ===null?
+                    <img src={require("../images/facevide.jpeg")} alt="" />
+                    :
+                    <img src={require("../images/face"+this.state.face+".jpeg")} alt="" />
+                }
+
                 <h2>nombre d'essais : {this.state.compteur}</h2>
                 {this.state.fin ? 
                 <div>
