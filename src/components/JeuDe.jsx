@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class JeuDe extends Component {
     constructor(props) {
         super(props);
+
         this.state = { face: null, compteur: 0, fin: false };
     }
 
@@ -16,9 +17,10 @@ export default class JeuDe extends Component {
 
     render() {
         return (
-            <div>
+            <div className='jeu'> 
                 <img src="images/Dé.PNG" />
                 <h1>Jeu de Dé...</h1>
+                <h2>face:….. </h2>
                 <h2>nombre d'essais…..</h2>
                 <button onClick={() => this.jouer()}>jouer</button>
                 <p>Bravo vous avez trouvez la face cachée.....</p>
