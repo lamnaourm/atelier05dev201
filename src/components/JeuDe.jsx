@@ -26,8 +26,10 @@ export default class JeuDe extends Component {
                 <h2>face:{this.state.face} </h2>
                 <h2>nombre d'essais : {this.state.compteur}</h2>
                 {this.state.fin ? 
-                <div><p>Bravo vous avez trouvez la face cachée.....</p>
-                <button onClick={() => this.initialiser()}>Initialiser</button></div> 
+                <div>
+                    <p>Bravo vous avez trouvez la face cachée.....</p>
+                    <button onClick={() => this.initialiser()}>Initialiser</button>
+                </div> 
                 :
                 <button onClick={() => this.jouer()}>jouer</button>}
 
