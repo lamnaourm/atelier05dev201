@@ -9,7 +9,10 @@ export default class JeuDe extends Component {
 
     jouer() {
         const valeur = Math.floor(Math.random() * 6) + 1;
-        //completer le code
+        if (valeur === this.props.cache)
+            this.setState({ face: valeur, compteur: this.state.compteur + 1, fin: true })
+        else
+            this.setState({ face: valeur, compteur: this.state.compteur + 1 })
     }
     initialiser() {
         this.setState({ face: null, compteur: 0, fin: false });
@@ -17,14 +20,17 @@ export default class JeuDe extends Component {
 
     render() {
         return (
-            <div className='jeu'> 
-                <img src={require('../images/de.jpeg')} alt='logo de dé'/>
-                <h1>Jeu de Dé...</h1>
-                <h2>face:….. </h2>
-                <h2>nombre d'essais…..</h2>
-                <button onClick={() => this.jouer()}>jouer</button>
-                <p>Bravo vous avez trouvez la face cachée.....</p>
-                <button onClick={() => this.initialiser()}>Initialiser</button>
+            <div className='jeu'>
+                <img src={require('../images/de.jpeg')} alt='logo de dé' />
+                <h1>Jeu de Dé</h1>
+                <h2>face:{this.state.face} </h2>
+                <h2>nombre d'essais : {this.state.compteur}</h2>
+                {this.state.fin ? 
+                <div><p>Bravo vous avez trouvez la face cachée.....</p>
+                <button onClick={() => this.initialiser()}>Initialiser</button></div> 
+                :
+                <button onClick={() => this.jouer()}>jouer</button>}
+
             </div>
         )
     }
